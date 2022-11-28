@@ -10,6 +10,3 @@ def get_users(data:dict)->list:
     """
     # Get the list of users
     pass
-
-
-data = read_json("users.json")
