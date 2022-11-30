@@ -9,10 +9,12 @@ def read_json(filename:str) -> dict:
     return:
         dict: The data in the file
     """
-
+    dic= json.loads(filename)
     # Read the data from the file
 
     # Parse the JSON data
 
-    return 0
-  
+    return dic
+f=open("users.json")
+filename=f.read() 
+print(read_json(filename))
