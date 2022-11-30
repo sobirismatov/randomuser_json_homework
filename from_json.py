@@ -1,6 +1,4 @@
 import json
-
-
 def read_json(filename:str) -> dict:
     """Reads a JSON file and returns the data as a dictionary
 

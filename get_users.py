@@ -1,4 +1,4 @@
-from from_json import read_json
+import json
 def get_users(data:dict)->list:
     """Gets a list of users from the data
 
@@ -9,4 +9,10 @@ def get_users(data:dict)->list:
         list: A list of users
     """
     # Get the list of users
-    pass
+    dic= json.loads(data)
+    a=[]
+    a.append(dic)
+    return a
+f=open("users.json")
+data=f.read() 
+print(get_users(data))
