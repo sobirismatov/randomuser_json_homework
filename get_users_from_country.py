@@ -1,4 +1,5 @@
-import json
+from from_json import read_json
+data=read_json("users.json")
 def get_users_from_country(data:dict, country:str)->list:
     """Gets all users from a country from the data
     Args:
@@ -7,13 +8,12 @@ def get_users_from_country(data:dict, country:str)->list:
     Returns:
         list: A list of users
     """
-    dic =json.loads(data)
-    dic=dic["users"]
+
+    dic=data["users"]
     a=[]
     for i in dic:
         if country == i["country"]:
             a.append(i)
     return a
-f=open("users.json")
-data=f.read()
+
 print(get_users_from_country(data,"USA"))

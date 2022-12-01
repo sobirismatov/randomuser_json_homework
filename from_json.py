@@ -7,11 +7,10 @@ def read_json(filename:str) -> dict:
     return:
         dict: The data in the file
     """
-    dic= json.loads(filename)
+    f=open(filename).read()
+    dic= json.loads(f)
     # Read the data from the file
 
     # Parse the JSON data
     return dic
-f=open("users.json")
-filename=f.read() 
-print(read_json(filename))
+

@@ -1,4 +1,5 @@
-import json
+from from_json import read_json
+data= read_json("users.json")
 def get_users_younger_than(data:dict, age:int)->list:
     """Gets all users younger than a certain age from the data
     Args:
@@ -7,15 +8,14 @@ def get_users_younger_than(data:dict, age:int)->list:
     Returns:
         list: A list of users
     """
-    dic =json.loads(data)
-    dic =dic["users"]
+    
+    dic =data["users"]
     a=[]
     for i in dic:
         if age>i["age"]:
             a.append(i)
     return a
 
-f=open("users.json")
-data=f.read()
+
 print(get_users_younger_than(data,25))
     

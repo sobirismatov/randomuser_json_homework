@@ -1,4 +1,5 @@
-import json
+from from_json import read_json
+data=read_json("users.json")
 def get_male_users(data:dict)->list:
     """Gets all male users from the data
     Args:
@@ -6,13 +7,11 @@ def get_male_users(data:dict)->list:
     Returns:
         list: A list of users
     """
-    dic=json.loads(data)
-    dic=dic["users"]
+    dic=data["users"]
     a=[]
     for i in dic:
         if i["gender"]=="male":
             a.append(i)
     return a
-f=open("users.json")
-data=f.read()
+
 print(get_male_users(data))
